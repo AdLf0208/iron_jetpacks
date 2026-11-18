@@ -1,0 +1,27 @@
+id = "ironjetpacks"
+name = "Iron Jetpacks"
+version = "0.2.0"
+description = """Iron Jetpacks for Horizon: one iron-tier jetpack with a powered vertical flight model and
+an item-backed 800,000 FE tank. Worn in the chest slot it lifts the player while jump is held and
+the engine is on; the tank drains per thrust tick, sprinting multiplies both the lift and the
+burn, and an empty tank cuts thrust. The iron-tier component items and the recipe chain ship with
+it. Rewritten from Iron Jetpacks 8.0.11 by BlakeBr0 (MIT)."""
+authors = ["BlakeBr0 (upstream)", "Horizon native mod contributors"]
+# The SDK package (mod API 0.2): one flat .hmod with the code in src/ and the carried item
+# definitions, models, textures, lang and recipes in data/ and assets/. The id is the resource
+# namespace and the only identity: Cargo's package name and version are not the mod's.
+api = "0.2"
+# "both" is the installation side: an integrated server belongs to the client installation,
+# so single player and a LAN host need both.
+side = "both"
+license = "MIT"
+homepage = "https://github.com/BlakeBr0/IronJetpacks"
+issues = "https://github.com/BlakeBr0/IronJetpacks/issues"
+# Required by the manifest schema ("May add blocks, items, mob effects and entity types"); the
+# field is a permission, not a claim. The jetpack and its components are declared in data/.
+capabilities = ["registries"]
+
+[native]
+game = "26.3"
+horizon = "0b14f8acfd97fa2c750e42795249dcc981178ca4"
+mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"
