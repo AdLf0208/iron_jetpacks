@@ -1,0 +1,19 @@
+[package]
+name = "horizon-ironjetpacks"
+version = "0.2.0"
+edition = "2024"
+license = "MIT"
+description = "Iron Jetpacks for Horizon: one tier's powered vertical flight"
+# Ported from: Iron Jetpacks 8.0.11 (BlakeBr0/IronJetpacks, MIT per the jar's
+# META-INF/neoforge.mods.toml and the 26.1 repository LICENSE). LOCAL-ONLY until
+# the maintainer approves publishing (ARCHITECTURE.md §8).
+#
+# No `rust-version`: the scaffold declares none, and a floor above the box's
+# toolchain refuses the crate. The pinned Horizon commit decides the toolchain.
+
+[dependencies]
+# The pinned SDK's API crate, fetched into .horizon/sdk/ by any `cargo horizon-mod`
+# command (gitignored, never packed). No other dependency: the pure runtime needs
+# nothing, and a registry crate would have to be pinned with
+# `horizon-launcher native-lock .` before building.
+horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api" }
